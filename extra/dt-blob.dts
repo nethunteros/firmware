@@ -996,7 +996,13 @@
                function = "input";
             }; // pin
             pin@p14 { function = "uart0";  termination = "no_pulling"; drive_strength_mA = < 8 >; }; // TX uart0
-            pin@p15 { function = "uart0";  termination = "pull_up"; drive_strength_mA = < 8 >; }; // RX uart0
+            pin@p15 { function = "uart0";  termination = "pull_up";    drive_strength_mA = < 8 >; }; // RX uart0
+            pin@p34 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p35 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p36 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p37 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p38 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p39 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
             pin@p40 { function = "pwm";    termination = "no_pulling"; drive_strength_mA = < 16 >; }; // Right audio
             pin@p41 { function = "pwm";    termination = "no_pulling"; drive_strength_mA = < 16 >; }; // Left audio
             pin@p42 { function = "gp_clk"; termination = "pull_down"; }; // ETH_CLK - Ethernet 25MHz output
@@ -1077,6 +1083,14 @@
                type = "external";
                number = <3>;
             };
+            pin_define@BT_ON {
+               type = "external";
+               number = <0>;
+            };
+            pin_define@WL_ON {
+               type = "external";
+               number = <1>;
+            };
             pin_define@SMPS_SDA {
                type = "internal";
                number = <44>;
@@ -1145,7 +1159,13 @@
                function = "input";
             }; // pin
             pin@p14 { function = "uart0";  termination = "no_pulling"; drive_strength_mA = < 8 >; }; // TX uart0
-            pin@p15 { function = "uart0";  termination = "pull_up"; drive_strength_mA = < 8 >; }; // RX uart0
+            pin@p15 { function = "uart0";  termination = "pull_up";    drive_strength_mA = < 8 >; }; // RX uart0
+            pin@p34 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p35 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p36 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p37 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p38 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
+            pin@p39 { function = "input";  termination = "pull_up";    drive_strength_mA = < 8 >; };
             pin@p40 { function = "pwm";    termination = "no_pulling"; drive_strength_mA = < 16 >; }; // Right audio
             pin@p41 { function = "pwm";    termination = "no_pulling"; drive_strength_mA = < 16 >; }; // Left audio
             pin@p42 { function = "gp_clk"; termination = "pull_down"; }; // ETH_CLK - Ethernet 25MHz output
@@ -1226,6 +1246,14 @@
             pin_define@LAN_RUN {
                type = "external";
                number = <3>;
+            };
+            pin_define@BT_ON {
+               type = "external";
+               number = <0>;
+            };
+            pin_define@WL_ON {
+               type = "external";
+               number = <1>;
             };
             pin_define@SMPS_SDA {
                type = "internal";

@@ -8,15 +8,15 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
-  run-parts -v --verbose --exit-on-error --arg=4.14.30+ /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=4.14.30-v7+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=4.14.34+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=4.14.34-v7+ /etc/kernel/header_postinst.d
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/4.14.30+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=4.14.30+ /etc/kernel/header_postinst.d/4.14.30+
+if [ -d "/etc/kernel/header_postinst.d/4.14.34+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=4.14.34+ /etc/kernel/header_postinst.d/4.14.34+
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/4.14.30-v7+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=4.14.30-v7+ /etc/kernel/header_postinst.d/4.14.30-v7+
+if [ -d "/etc/kernel/header_postinst.d/4.14.34-v7+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=4.14.34-v7+ /etc/kernel/header_postinst.d/4.14.34-v7+
 fi
 #DEBHELPER#

@@ -329,6 +329,11 @@ if [ -f /usr/share/rpikernelhack/overlays/iqaudio-digi-wm8804-audio.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/iqaudio-digi-wm8804-audio.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/jedec-spi-nor.dtbo ]; then
+	rm -f /boot/overlays/jedec-spi-nor.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/jedec-spi-nor.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/justboom-dac.dtbo ]; then
 	rm -f /boot/overlays/justboom-dac.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/justboom-dac.dtbo
@@ -723,13 +728,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.30+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.30-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.30+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.30+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.30+
+if [ -d "/etc/kernel/postinst.d/4.14.34+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.34+
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.30-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.30-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.30-v7+
+if [ -d "/etc/kernel/postinst.d/4.14.34-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.34-v7+
 fi
 #DEBHELPER#

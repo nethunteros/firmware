@@ -8,13 +8,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postrm.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.30+ --arg=/boot/kernel.img /etc/kernel/postrm.d
-  run-parts -v --report --exit-on-error --arg=4.14.30-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d
 fi
-if [ -d "/etc/kernel/postrm.d/4.14.30+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.30+ --arg=/boot/kernel.img /etc/kernel/postrm.d/4.14.30+
+if [ -d "/etc/kernel/postrm.d/4.14.34+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/postrm.d/4.14.34+
 fi
-if [ -d "/etc/kernel/postrm.d/4.14.30-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.30-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d/4.14.30-v7+
+if [ -d "/etc/kernel/postrm.d/4.14.34-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d/4.14.34-v7+
 fi
 #DEBHELPER#

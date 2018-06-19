@@ -99,6 +99,11 @@ if [ -f /usr/share/rpikernelhack/overlays/allo-digione.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-digione.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/allo-katana-dac-audio.dtbo ]; then
+	rm -f /boot/overlays/allo-katana-dac-audio.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-katana-dac-audio.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/allo-piano-dac-pcm512x-audio.dtbo ]; then
 	rm -f /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
@@ -132,6 +137,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/audremap.dtbo ]; then
 	rm -f /boot/overlays/audremap.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audremap.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/balena-fin.dtbo ]; then
+	rm -f /boot/overlays/balena-fin.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/balena-fin.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/bmp085_i2c-sensor.dtbo ]; then
@@ -347,6 +357,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/lirc-rpi.dtbo ]; then
 	rm -f /boot/overlays/lirc-rpi.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/lirc-rpi.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/ltc294x.dtbo ]; then
+	rm -f /boot/overlays/ltc294x.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ltc294x.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/mbed-dac.dtbo ]; then
@@ -728,13 +743,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.50+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.50-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.34+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.34+
+if [ -d "/etc/kernel/postinst.d/4.14.50+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.50+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.50+
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.34-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.34-v7+
+if [ -d "/etc/kernel/postinst.d/4.14.50-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.50-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.50-v7+
 fi
 #DEBHELPER#

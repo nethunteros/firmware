@@ -21,6 +21,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/a
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/akkordion-iqdacplus.dtbo /boot/overlays/akkordion-iqdacplus.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-boss-dac-pcm512x-audio.dtbo /boot/overlays/allo-boss-dac-pcm512x-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-digione.dtbo /boot/overlays/allo-digione.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-katana-dac-audio.dtbo /boot/overlays/allo-katana-dac-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-piano-dac-pcm512x-audio.dtbo /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo /boot/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/applepi-dac.dtbo /boot/overlays/applepi-dac.dtbo
@@ -28,6 +29,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/a
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audioinjector-addons.dtbo /boot/overlays/audioinjector-addons.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audioinjector-wm8731-audio.dtbo /boot/overlays/audioinjector-wm8731-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audremap.dtbo /boot/overlays/audremap.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/balena-fin.dtbo /boot/overlays/balena-fin.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/bmp085_i2c-sensor.dtbo /boot/overlays/bmp085_i2c-sensor.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dht11.dtbo /boot/overlays/dht11.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dionaudio-loco-v2.dtbo /boot/overlays/dionaudio-loco-v2.dtbo
@@ -71,6 +73,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/j
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/justboom-dac.dtbo /boot/overlays/justboom-dac.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/justboom-digi.dtbo /boot/overlays/justboom-digi.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/lirc-rpi.dtbo /boot/overlays/lirc-rpi.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/ltc294x.dtbo /boot/overlays/ltc294x.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mbed-dac.dtbo /boot/overlays/mbed-dac.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp23017.dtbo /boot/overlays/mcp23017.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp23s17.dtbo /boot/overlays/mcp23s17.dtbo
@@ -153,13 +156,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.50+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.50-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.14.34+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.34+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.14.34+
+if [ -d "/etc/kernel/preinst.d/4.14.50+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.50+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.14.50+
 fi
-if [ -d "/etc/kernel/preinst.d/4.14.34-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.34-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.14.34-v7+
+if [ -d "/etc/kernel/preinst.d/4.14.50-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.50-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.14.50-v7+
 fi
 #DEBHELPER#

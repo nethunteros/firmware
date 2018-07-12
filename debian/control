@@ -10,7 +10,7 @@ Vcs-Browser: https://github.com/RPi-Distro/firmware
 
 Package: libraspberrypi0
 Section: libs
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: raspberrypi-bootloader (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV
  This package contains implementations of EGL, OpenGL ES, OpenVG, OpenWF
@@ -19,7 +19,7 @@ Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV
 
 Package: libraspberrypi-dev
 Section: libdevel
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}
 Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV (headers)
  This package contains headers and other development files for implementations
@@ -28,7 +28,7 @@ Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV 
 
 Package: libraspberrypi-doc
 Section: libdevel
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}
 Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV (headers)
  This package contains headers, example code, and other development files for
@@ -37,7 +37,7 @@ Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV 
 
 Package: libraspberrypi-bin
 Section: misc
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}, device-tree-compiler
 Description: Miscellaneous Raspberry Pi utilities
  This package contains various utilities for interacting with the Raspberry
@@ -45,7 +45,7 @@ Description: Miscellaneous Raspberry Pi utilities
 
 Package: raspberrypi-bootloader
 Section: admin
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: ${misc:Depends}
 Recommends: raspberrypi-kernel
 Description: Raspberry Pi bootloader
@@ -53,7 +53,7 @@ Description: Raspberry Pi bootloader
 
 Package: raspberrypi-kernel
 Section: kernel
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: ${misc:Depends}
 Breaks: raspberrypi-bootloader (<<1.20160324-1)
 Replaces: raspberrypi-bootloader (<<1.20160324-1)
